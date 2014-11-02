@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   header("Content-Type: text/html; charset=utf-8");
   require_once("connectodata.php");  //連結資料庫
   session_start(); //啟動SESSION引用資料庫連線引入檔
@@ -10,7 +10,7 @@
   	$RecLogin = mysql_query($sql);
   	
   	//取出帳號密碼
-  	$row_RecLogin = mysqli_fetch_assoc($RecLogin);
+  	$row_RecLogin = mysql_fetch_assoc($RecLogin);
   	$account = $row_RecLogin["account"];
   	$password = $row_RecLogin["password"];
 
