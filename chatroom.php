@@ -4,6 +4,7 @@
 		<script type="text/javascript" src="extra/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="extra/js/material.min.js"></script>
 		<script type="text/javascript" src="extra/js/ripples.min.js"></script>
+		<script type="text/javascript" src="extra/js/chatroom.js"></script>
 		<link rel="stylesheet" type="text/css" href="extra/css/chatroom.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/ripples.min.css">
