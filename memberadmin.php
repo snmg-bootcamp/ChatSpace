@@ -8,20 +8,20 @@
 <html>
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  	<title>會員管理系統</title>
+  	<title>Member System</title>
   </head>
   <body>
   	<table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
   		<tr valign="top">
   			<td>
-  				<p><font size="6" color="#FF0000">會員中心</font></p>
+  				<p><font size="6" color="#FF0000">Member Center</font></p>
   				<hr size="1" />
-  				<p>歡迎光臨</p>
+  				<p>Welcome</p>
   				<ol>
-  					<li>加入我們</li>
-  					<li>可以修改資料</li>
-  					<li>可以修改密碼</li>	
-  					<li>可以刪除帳號</li>	
+  					<li>Join us</li>
+  					<li>Modify data</li>
+  					<li>Modify password</li>	
+  					<li>Delete account</li>	
   				</ol>
   			</td>
   			<td width="200">
