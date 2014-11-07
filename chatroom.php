@@ -16,6 +16,10 @@
         </script>
 	</head>
 	<body>
+		<?php
+			require_once("connectMsg.php");
+			echo time();
+		?>
 		<div id="rootPanel">
 			<div id="msgPanel"></div>
 			<div id="senderPanel">
