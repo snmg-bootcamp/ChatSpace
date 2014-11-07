@@ -1,0 +1,41 @@
+body{
+	background: #efefef;
+}
+#rootPanel{
+	position: relative;
+	width: 60%;
+	height: 600px;
+	margin-left: 20%;
+	padding-top: 10px;
+	border-radius: 20px;
+	background-color: #ffffff;
+}
+#msgPanel{
+	position: relative;
+	height: 80%;
+	width: 95%;
+	margin: 20px;
+	border: 1px #66A3FF solid;
+	border-radius: 5px;
+}
+#senderPanel{}
+#textBox{
+	float: left;
+	margin-left: 20px;
+	width: 77%;
+}
+#msgingArea{
+	width: 100%;
+	height: 35px;
+}
+#submitArea{
+	margin-left: 30px;
+	float: left;
+	width:16%;
+}
+#submitBtn{
+	margin: 0px;
+}
+.cleaner{
+	clear:both;
+} 
