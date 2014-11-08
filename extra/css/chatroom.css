@@ -8,7 +8,7 @@ body{
 	margin-left: 20%;
 	padding-top: 10px;
 	border-radius: 20px;
-	background-color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 #msgPanel{
 	position: relative;
@@ -17,6 +17,8 @@ body{
 	margin: 20px;
 	border: 1px #66A3FF solid;
 	border-radius: 5px;
+	padding: 15px;
+	overflow: auto;
 }
 #senderPanel{}
 #textBox{
@@ -26,7 +28,8 @@ body{
 }
 #msgingArea{
 	width: 100%;
-	height: 35px;
+	margin-top: 14px;
+	overflow: auto;
 }
 #submitArea{
 	margin-left: 30px;
@@ -38,4 +41,18 @@ body{
 }
 .cleaner{
 	clear:both;
-} 
+}
+
+span.timeSpan{
+	position: relative;
+	float: right;
+	margin-right: 20px;
+}
+.msgBody{
+	border-bottom: solid 1px #C4C4C4;
+	margin-bottom: 10px;
+	display: none;
+}
+.msgText{
+	padding-left: 10px;
+}

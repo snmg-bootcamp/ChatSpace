@@ -18,13 +18,12 @@
 	<body>
 		<?php
 			require_once("connectMsg.php");
-			echo time();
 		?>
 		<div id="rootPanel">
-			<div id="msgPanel"></div>
+			<div id="msgPanel"><div id="msgPanelFooter"></div></div>
 			<div id="senderPanel">
 				<div id="textBox">
-					<input class="form-control" id="msgingArea" placeholder="Message...">
+					<textarea class="form-control" id="msgingArea" placeholder=" Message..." rows="1"></textarea>
 				</div>
 				<div id="submitArea">
 					<a href="javascript:void(0)" class="btn btn-primary" id="submitBtn">Submit</a>
