@@ -1,24 +1,27 @@
 body{
-	background: #efefef;
+	background-image: url("../img/chatroomBG.jpg");
 }
 #rootPanel{
 	position: relative;
-	width: 60%;
+	width: 55%;
 	height: 600px;
-	margin-left: 20%;
+	margin-left: 22%;
 	padding-top: 10px;
 	border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgb(95%, 95%, 95%);
+	box-shadow: 0px 16px 3px 13px rgba(100%,100%,100%,0.1);
+	margin-top: 20px;
 }
 #msgPanel{
 	position: relative;
 	height: 80%;
 	width: 95%;
 	margin: 20px;
-	border: 1px #66A3FF solid;
+	border: 1px #9F9F9F solid;
 	border-radius: 5px;
 	padding: 15px;
 	overflow: auto;
+	background-color: #FFF;
 }
 #senderPanel{}
 #textBox{
