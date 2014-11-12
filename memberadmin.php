@@ -8,7 +8,7 @@
 <html>
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  	<title>Member System</title>
+  	<title>Member Center</title>
   </head>
   <body>
   	<table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
