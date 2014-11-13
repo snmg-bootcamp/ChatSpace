@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>MemberAdmin System</title>
-	<script language="javascript"></script>
+	<script language="javascript">
 	<!--檢查表單填寫格式-->
 	function checkForm()
   {
@@ -71,6 +71,7 @@
         return true;
     }
   }
+  </script>
 </head>
 <body>
   <table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
