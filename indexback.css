@@ -1,0 +1,11 @@
+body{
+	background-image: url("reebonz.jpg");
+}
+
+#form{
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding-bottom: 20px;
+	margin-top: 10%;
+	text-align: center;
+}
