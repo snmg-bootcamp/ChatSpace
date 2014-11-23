@@ -58,4 +58,5 @@ span.timeSpan{
 }
 .msgText{
 	padding-left: 10px;
+	word-wrap: break-word;
 }

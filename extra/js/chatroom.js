@@ -1,3 +1,4 @@
+var msgPanel;
 $(document).ready(function(){
 	getMessage(Date.now());
 	$("#submitBtn").click(function(){
@@ -10,6 +11,8 @@ $(document).ready(function(){
 			sendMessage();
 		}
 	});
+
+	msgDiv = document.getElementById("msgPanel");
 });
 
 function sendMessage(){
@@ -45,6 +48,7 @@ function getMessage(timestamp){
 			for (var i = 0; i < Object.keys(jsonObj).length; i++){
 				insertMessage(jsonObj[i].id, jsonObj[i].content, jsonObj[i].time);
 			};
+			msgDiv.scrollTop = msgDiv.scrollHeight;
 		},
 		error:function(){
 			console.log("error");
