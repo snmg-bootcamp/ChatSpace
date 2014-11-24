@@ -1,0 +1,48 @@
+body{
+	background-image: url("reebonz.jpg");
+	background-size: cover;
+}
+
+
+#title_block{
+	text-shadow: 2px 2px;
+	font-size: 35px;
+	color: #FFFFFF;
+}
+
+#form{
+	width:500px;
+	height: 600px; 
+	box-shadow:1px 1px 20px #333333;
+	text-shadow: 2px 2px;
+	padding-bottom: 20px;
+	border-radius: 2px;
+	margin-top: 10%;
+	text-align: center;
+	overflow: hidden;
+	color: #FFFFFF;
+	font-size: 20px;
+	margin-bottom: 5%;
+    transition:all 0.2s ease-in;
+    background-color: black;
+    background: rgba(0,0,0,0.7);
+}
+
+.submit{
+	display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #646464;
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.submit:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+}

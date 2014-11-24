@@ -1,11 +1,20 @@
 body{
-	background-image: url("reebonz.jpg");
+	background-image: url("chalkboard.jpg");
+	background-size: cover;
+}
+
+#title_block{
+	text-shadow: 2px 2px;
+	font-size: 35px;
+	color: #FFFFFF;
 }
 
 #form{
-	background: rgba(0, 0, 0, 0.6);
-	color: #fff;
+	text-shadow: 2px 2px;
 	padding-bottom: 20px;
 	margin-top: 10%;
 	text-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	margin-bottom: 5%;
 }

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
   header("Content-Type: text/html; charset=utf-8");
   require_once("connectodata.php");  //連結資料庫
   session_start(); //啟動SESSION引用資料庫連線引入檔
