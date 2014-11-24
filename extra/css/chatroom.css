@@ -1,16 +1,32 @@
 body{
 	background-image: url("../img/chatroomBG.jpg");
+	padding-top:  70px;
 }
-#rootPanel{
-	position: relative;
+#navbar{
+	background-color: #428636;
+	z-index:  2;
+	position: fixed;
+	top:  0px;
+	width: 100%;
+}
+#postPanel{
+	position:  relative;
 	width: 55%;
 	height: 600px;
-	margin-left: 22%;
-	padding-top: 10px;
-	border-radius: 20px;
-	background-color: rgb(95%, 95%, 95%);
-	box-shadow: 0px 16px 3px 13px rgba(100%,100%,100%,0.1);
-	margin-top: 20px;
+	float: left;
+}
+.pnl{
+	background-color: #E0F9C0;
+	margin-left:  1%;
+}
+#chatPanel{
+	position: relative;
+	padding-top:  10px;
+	width: 42%;
+	height: 600px;
+	background-color: #E0F9C0;
+	float: left;
+	/*box-shadow: 0px 16px 3px 13px rgba(100%,100%,100%,0.1); */
 }
 #msgPanel{
 	position: relative;
@@ -27,7 +43,7 @@ body{
 #textBox{
 	float: left;
 	margin-left: 20px;
-	width: 77%;
+	width: 69%;
 }
 #msgingArea{
 	width: 100%;
@@ -41,6 +57,7 @@ body{
 }
 #submitBtn{
 	margin: 0px;
+	background-color: #428636;
 }
 .cleaner{
 	clear:both;
