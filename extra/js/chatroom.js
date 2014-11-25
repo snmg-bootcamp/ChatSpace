@@ -16,12 +16,13 @@ $(document).ready(function(){
 });
 
 function sendMessage(){
-	if($("#msgingArea").val() != ""){
+	var message = $("#msgingArea").val();
+	if(message != ""){
 		$.ajax({
 			type: "POST",
 			url: "saveMsg.php",
 			data:{
-				"content": $('#msgingArea').val(),
+				"content": message,
 				"timestamp": Date.now()
 			},
 			success:function(){
@@ -57,6 +58,13 @@ function getMessage(timestamp){
 }
 
 function insertMessage(id, content, timestamp){
+	if(urlCheck(content)){
+		if (youtubeUrlCheck(content)) {
+			content = makeYoutubePlayer(content);
+		}else{
+			content = makeHyperLink(content);
+		}
+	}
 	var box='<div class="msgBody" id="'+ id +'">\
 				<div class="msgText">'+content+'</div>\
 				<div class="msgTime"><span class="timeSpan">'+formatTime(timestamp)+'</span></div>\
@@ -77,4 +85,36 @@ function formatTime(timestamp){
   	var min = t.getMinutes();
   	var time = month + '-' + date + ' ' + hour + ':' + min;
   	return time;
+}
+
+function urlCheck(str){
+	var isUrl = false;
+	if (str.indexOf("http://") > -1 || str.indexOf("https://") > -1) {
+		isUrl = true;
+	}
+	return isUrl;
+}
+
+function youtubeUrlCheck(str){
+	var isYoutubeUrl = false;
+	if(str.indexOf("https://www.youtube.com/watch") > -1){
+		isYoutubeUrl = true;
+	}
+	return isYoutubeUrl;
+}
+
+function makeHyperLink(str){
+	str = str.replace(/(https:\/\/[\S]+)/, "<a href='$1' target='_blank'>$1</a>");
+	str = str.replace(/(http:\/\/[\S]+)/, "<a href='$1' target='_blank'>$1</a>");
+	return str;
+}
+
+function makeYoutubePlayer(content){
+	var youtubeUrl;
+	var hyperLinkContent;
+	hyperLinkContent = makeHyperLink(content);
+	content = content.replace("watch?v=", "embed/");
+	playerSrc = content.match(/https:\/\/www\.youtube\.com\/embed[\S]+/);
+	content = hyperLinkContent + "\n" + "<iframe width='560' height='315' src='"+playerSrc+"' frameborder='0' allowfullscreen></iframe>";
+	return content;
 }

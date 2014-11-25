@@ -14,6 +14,7 @@ body{
 	width: 55%;
 	height: 600px;
 	float: left;
+	padding: 20px;
 }
 .pnl{
 	background-color: #E0F9C0;
@@ -76,4 +77,43 @@ span.timeSpan{
 .msgText{
 	padding-left: 10px;
 	word-wrap: break-word;
+}
+#postFormDiv{
+	background-color: #FFFFFF;
+	position: relative;
+	border-radius: 3px;
+	border: solid 1px #428636;
+	padding: 1px;
+}
+#textArea{
+	border-bottom: 0px;
+}
+#postFormPrivate{
+	float: left;
+	margin-left: 65%;
+}
+#postFormSubmit{
+	float: left;
+	margin-left: 7%;
+	margin-top: 10px;
+}
+#postformTitle{
+	font-size: 20px;
+	color: #428636;
+	font-style: italic;
+}
+#shareBtn{
+	background-color: #428636;
+	margin-top: 0px;
+}
+#postForm{
+	height: 160px;
+	border-bottom: solid 2px #A1A1A1;
+}
+#postBox{
+	position: relative;
+	width: 100%;
+	height: 65%;
+	background-color: #FFFFFF;
+	margin-top: 20px;
 }

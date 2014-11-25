@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<title>ChatSpace</title>
+		<link rel="shortcut icon" href="extra/img/favicon.ico" >
 		<script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="extra/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="extra/js/material.min.js"></script>
@@ -42,6 +44,27 @@
   			</div><!-- /.container-fluid -->
 		</nav>
 		<div id="postPanel" class="pnl">
+			<div id="postForm">
+				<div id="postFormTitleBox">
+					<span id="postFormTitle">Share your status</span>
+				</div>
+				<div id="postFormDiv">
+                				<textarea class="form-control" rows="3" id="textArea"></textarea>
+				</div>
+				<div id="postFormPrivate">
+					<div class="checkbox">
+                    					<label>
+                        						<input type="checkbox"> Checkbox
+ 					             </label>
+                				</div>
+				</div>
+				<div id="postFormSubmit">
+					<a href="javascript:void(0)" class="btn btn-primary" id="shareBtn">Share</a>
+				</div>
+				<div class="cleaner"></div>
+			</div>
+			<div id="postBox">
+			</div>
 		</div>
 		<div id="chatPanel" class="pnl">
 			<div id="msgPanel"><div id="msgPanelFooter"></div></div>
