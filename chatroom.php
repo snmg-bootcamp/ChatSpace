@@ -54,7 +54,7 @@
 				<div id="postFormPrivate">
 					<div class="checkbox">
                     					<label>
-                        						<input type="checkbox"> Checkbox
+                        						<input type="checkbox" id="isAnonymous"> 偷偷說
  					             </label>
                 				</div>
 				</div>

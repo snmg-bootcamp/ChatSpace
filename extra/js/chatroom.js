@@ -4,15 +4,17 @@ $(document).ready(function(){
 	$("#submitBtn").click(function(){
 		sendMessage();
 	});
-
 	$("#msgingArea").keydown(function(event){
 		if(event.keyCode == 13 ){
 			event.preventDefault();
 			sendMessage();
 		}
 	});
-
 	msgDiv = document.getElementById("msgPanel");
+
+	$("#shareBtn").click(function(){
+		submitPost();
+	});
 });
 
 function sendMessage(){
@@ -117,4 +119,29 @@ function makeYoutubePlayer(content){
 	playerSrc = content.match(/https:\/\/www\.youtube\.com\/embed[\S]+/);
 	content = hyperLinkContent + "\n" + "<iframe width='560' height='315' src='"+playerSrc+"' frameborder='0' allowfullscreen></iframe>";
 	return content;
+}
+
+function submitPost(){
+	var author = "authorName";
+	var content = $("#textArea").val();
+	var isAnonymous = ( document.getElementById("isAnonymous").checked) ? 1 : 0;
+	if(content != ""){
+		$.ajax({
+			type: "POST",
+			url: "savePost.php",
+			data:{
+				"author": author,
+				"content": content,
+				"isAnonymous": isAnonymous,
+				"timestamp": Date.now()
+			},
+			success:function(data){
+				$('#textArea').val("");
+				console.log(data);
+			},
+			error:function(){
+				alert("Error");
+			}
+		},"json");
+	}
 }
