@@ -8,8 +8,10 @@
 		$sql = "INSERT INTO posts (author,content,anonymous,timestamp) VALUES ('$authorSecured','$contentSecured','$_POST[isAnonymous]','$_POST[timestamp]')";
 		$queryStatus = mysql_query( $sql, $conHost);
 		if ($queryStatus) {
+			$id = mysql_insert_id();
 			$postReturn = array(	'dataQualified' => $dataQualified ,
 						'queryStatus' => $queryStatus ,
+						'id' => $id,
 						'author' => $authorSecured ,
 						'content' => $contentSecured ,
 						'anonymous' => $_POST["isAnonymous"] ,

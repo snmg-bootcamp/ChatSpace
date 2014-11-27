@@ -1,5 +1,5 @@
 body{
-	background-image: url("../img/chatroomBG.jpg");
+	background-color: #FFFFFF;
 	padding-top:  70px;
 }
 #navbar{
@@ -15,6 +15,7 @@ body{
 	height: 600px;
 	float: left;
 	padding: 20px;
+	border: 1px #9F9F9F solid;
 }
 .pnl{
 	background-color: #E0F9C0;
@@ -27,7 +28,7 @@ body{
 	height: 600px;
 	background-color: #E0F9C0;
 	float: left;
-	/*box-shadow: 0px 16px 3px 13px rgba(100%,100%,100%,0.1); */
+	border: 1px #9F9F9F solid;
 }
 #msgPanel{
 	position: relative;
@@ -116,4 +117,5 @@ span.timeSpan{
 	height: 65%;
 	background-color: #FFFFFF;
 	margin-top: 20px;
+	border: 1px #9F9F9F solid;
 }

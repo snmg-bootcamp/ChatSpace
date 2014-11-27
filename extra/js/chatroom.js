@@ -74,7 +74,7 @@ function insertMessage(id, content, timestamp){
 			</div>';
 
 	$("#msgPanelFooter").before(box);
-	var target = document.getElementById(id);
+	//var target = document.getElementById(id);
 	$("#"+id).fadeIn();
 }
 
@@ -137,11 +137,30 @@ function submitPost(){
 			},
 			success:function(data){
 				$('#textArea').val("");
-				console.log(data);
+				var jsonObj = jQuery.parseJSON(data);
+				console.log(jsonObj);
+				if (jsonObj.dataQualified == true && jsonObj.queryStatus == true){
+					insertPost(jsonObj.id, jsonObj.author, jsonObj.content, jsonObj.anonymous, formatTime(jsonObj.timestamp));
+				};
 			},
 			error:function(){
 				alert("Error");
 			}
 		},"json");
 	}
+}
+
+function insertPost(id, author, content, anonymous, postTime){
+	author = (anonymous == 1) ? "偷偷說..." : author;
+	var box = "<div class='postBox' postId='"+id+"'>\
+			<div class='titleBar' postId='"+id+"'>\
+				<div class='postAuthor' postId='"+id+"'>"+author+"</div>\
+				<div class='postTime' postId='"+id+"'>"+postTime+"<div>\
+			</div>\
+			<div class='contentBox' postId='"+id+"'>"+content+"</div>\
+			<div class='likeBox' postId='"+id+"'>\
+				<span class='likeSpan' postId='"+id+"'><a class='likeBtn' postId='"+id+"'>Like</a></span>\
+			</div>\
+		</div>";
+	$("#postBox").prepend(box);
 }

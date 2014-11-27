@@ -21,7 +21,7 @@
 		<?php
 			require_once("connectMsg.php");
 		?>
-		<nav class="navbar navbar-default" role="navigation" id="navbar">
+		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">ChatSpace</a>
