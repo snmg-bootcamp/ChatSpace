@@ -155,9 +155,9 @@ function insertPost(id, author, content, anonymous, postTime){
 	var box = "<div class='postBox' postId='"+id+"'>\
 			<div class='titleBar' postId='"+id+"'>\
 				<div class='postAuthor' postId='"+id+"'>"+author+"</div>\
-				<div class='postTime' postId='"+id+"'>"+postTime+"<div>\
+				<div class='postTime' postId='"+id+"'>"+postTime+"</div>\
 			</div>\
-			<div class='contentBox' postId='"+id+"'>"+content+"</div>\
+			<div class='contentBox' postId='"+id+"'><span class='contentSpan' postId='"+id+"'>"+content+"</span></div>\
 			<div class='likeBox' postId='"+id+"'>\
 				<span class='likeSpan' postId='"+id+"'><a class='likeBtn' postId='"+id+"'>Like</a></span>\
 			</div>\
