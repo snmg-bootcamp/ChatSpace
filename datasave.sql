@@ -7,7 +7,7 @@ CREATE TABLE member
 	password varchar(20) NOT NULL,
 	name varchar(20) NOT NULL,
 	registerTime datetime NOT NULL ,
-	status INT NOT NULL,
+	status INT NOT NULL DEFAULT 1,
 	PRIMARY KEY (ID)
 );
 
