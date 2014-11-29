@@ -46,10 +46,10 @@
 		<div id="postPanel" class="pnl">
 			<div id="postForm">
 				<div id="postFormTitleBox">
-					<span id="postFormTitle">Share your status</span>
+					<span id="postFormTitle">Share status</span>
 				</div>
 				<div id="postFormDiv">
-                				<textarea class="form-control" rows="3" id="textArea"></textarea>
+                				<textarea class="form-control" rows="3" id="textArea" placeholder="What's on your mind?"></textarea>
 				</div>
 				<div id="postFormPrivate">
 					<div class="checkbox">
@@ -63,7 +63,7 @@
 				</div>
 				<div class="cleaner"></div>
 			</div>
-			<div id="postBox">
+			<div id="postContainer">
 			</div>
 		</div>
 		<div id="chatPanel" class="pnl">
@@ -78,5 +78,7 @@
 				<div class="cleaner"></div>
 			</div>
 		</div>
+		<div class="cleaner"></div>
+		<div id="successPosting"><span id="successInfo">貼文已成功分享</span></div>
 	</body>
 </html>
