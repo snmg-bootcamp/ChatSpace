@@ -1,4 +1,7 @@
 var msgPanel;
+var postAuthor;
+var postTime;
+var postContent;
 $(document).ready(function(){
 	getMessage(Date.now());
 	getPost(Date.now() - 86400000);
@@ -15,6 +18,12 @@ $(document).ready(function(){
 
 	$("#shareBtn").click(function(){
 		submitPost();
+	});
+	$("#postContainer").on("click",".postBox", function(){
+		postAuthor = $(this).find(".postAuthor").html();
+		postTime = $(this).find(".postTime").html();
+		postContent = $(this).find(".contentSpan").html();
+		postModal(postAuthor, postTime, postContent);
 	});
 });
 
@@ -192,4 +201,11 @@ function getPost(timestamp){
 function showSuccessInfo(){
 	$("#successPosting").fadeIn();
 	setTimeout( function(){$("#successPosting").fadeOut();} , 2000);
+}
+
+function postModal(postAuthor, postTime , postContent){
+	$("#modalTitle").html(postAuthor);
+	$("#modalTime").html(postTime);
+	$("#modalContentSpan").html(postContent);
+	$("#postDialog").modal("toggle");
 }
