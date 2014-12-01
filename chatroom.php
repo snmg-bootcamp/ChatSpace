@@ -43,42 +43,62 @@
     				</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 		</nav>
-		<div id="postPanel" class="pnl">
-			<div id="postForm">
-				<div id="postFormTitleBox">
-					<span id="postFormTitle">Share status</span>
+		<div id="containerColumn1">
+			<div style="clear:both">
+				<div id="postForm">
+					<div id="postFormTitleBox">
+						<span id="postFormTitle">Share status</span>
+					</div>
+					<div id="postFormDiv">
+                					<textarea class="form-control" id="textArea" placeholder="What's on your mind?"></textarea>
+					</div>
+					<div id="postFormSubmit">
+						<a href="javascript:void(0)" class="btn btn-primary" id="shareBtn">Share</a>
+					</div>
+					<div id="postFormPrivate">
+						<div class="checkbox">
+                    						<label>
+                        							<input type="checkbox" id="isAnonymous"> 偷偷說
+ 						             </label>
+                					</div>
+					</div>
+					<div class="cleaner"></div>
 				</div>
-				<div id="postFormDiv">
-                				<textarea class="form-control" rows="3" id="textArea" placeholder="What's on your mind?"></textarea>
+				<div id="chatPanel" class="pnl">
+					<div id="msgPanel"><div id="msgPanelFooter"></div></div>
+					<div id="senderPanel">
+						<div id="textBox">
+							<textarea class="form-control" id="msgingArea" placeholder=" Message..." rows="1"></textarea>
+						</div>
+						<div id="submitArea">
+							<a href="javascript:void(0)" class="btn btn-primary" id="submitBtn">Submit</a>
+						</div>
+						<div class="cleaner"></div>
+					</div>
 				</div>
-				<div id="postFormPrivate">
-					<div class="checkbox">
-                    					<label>
-                        						<input type="checkbox" id="isAnonymous"> 偷偷說
- 					             </label>
-                				</div>
-				</div>
-				<div id="postFormSubmit">
-					<a href="javascript:void(0)" class="btn btn-primary" id="shareBtn">Share</a>
-				</div>
-				<div class="cleaner"></div>
-			</div>
-			<div id="postContainer">
 			</div>
 		</div>
-		<div id="chatPanel" class="pnl">
-			<div id="msgPanel"><div id="msgPanelFooter"></div></div>
-			<div id="senderPanel">
-				<div id="textBox">
-					<textarea class="form-control" id="msgingArea" placeholder=" Message..." rows="1"></textarea>
+		<div id="containerColumn2">
+			<div style="clear:both;">
+				<div id="postPanel" class="pnl">
+					<div id="postContainer">
+					</div>
 				</div>
-				<div id="submitArea">
-					<a href="javascript:void(0)" class="btn btn-primary" id="submitBtn">Submit</a>
-				</div>
-				<div class="cleaner"></div>
 			</div>
 		</div>
+		
 		<div class="cleaner"></div>
 		<div id="successPosting"><span id="successInfo">貼文已成功分享</span></div>
+
+		<div class="modal fade" id="postDialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body" id="postModalContent"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="start" data-dismiss="modal">返回</button>
+						</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
 	</body>
 </html>
