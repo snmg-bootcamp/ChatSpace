@@ -4,9 +4,9 @@
   session_start();
   require_once("login_check.php");
 
-  $sql="SELECT * FROM ˋ member ˋ WHERE ˋ id ˋ = '".$_SESSION["id"]."'";
-  $record = mysql_query($sql);
-  $row= mysqli_fetch_assoc($record);
+  $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
+  $Member = mysql_query($query_Member);
+  $row_Member=mysql_fetch_assoc($Member);
 ?>
 <html>
 <head>
@@ -53,7 +53,6 @@
 				<form action="update_password.php" method="POST" name="form1" onSubmit="return checkForm();">
 					<p> <font size="6" color="#FF0000">Modify member's data</font></p>
 					<hr size="1" />
-				<p><strong>Use account</strong>:<?php echo $row["account"];?></p>
 				  <p><strong>Use password</strong> :
 				  	<input type="password" name="password1"><br>
 				  </p>
@@ -69,7 +68,7 @@
 				</form>
 			</td>
 			<td width="200">
-				<?php require_once("menu.php"); ?>
+				
 			</td>
 		</tr>
 	</table>

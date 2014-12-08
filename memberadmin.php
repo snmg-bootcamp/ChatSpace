@@ -5,9 +5,9 @@
 
   require_once("login_check.php");
 
-  $query_Member = "SELECT * FROM ˋmemberˋ WHERE ˋidˋ = '".$_SESSION["id"]."'";
-  $Member = mysql_query("$query_Member");
-  $row_Member=mysqli_fetch_assoc($Member);
+  $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
+  $Member = mysql_query($query_Member);
+  $row_Member=mysql_fetch_assoc($Member);
 ?>
 
 <html>

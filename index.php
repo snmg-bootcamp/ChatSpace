@@ -1,5 +1,13 @@
 <?php
-session_start();
+  session_start();
+
+  //如果帳號已經設定好了就自動導向會員管理中心
+  if (isset($_SESSION["id"]) && ($_SESSION["id"]!="")) {
+        //會員中心
+        header("Location: chatroom.php");
+  }
+  
+
 ?>
 <html>
 <head>
@@ -105,16 +113,11 @@ $(document).ready(function(){
             return false;
         }
         //abc
-        if(a.indexOf("/") > -1 || a.length == 0){
+        if(a.match(/[a-zA-Z0-9]{5,20}/) == null){
             alert("Your password may only contain alphabetic characters (A-Z) and numbers(0-9)!\n")
             return false;
         }
 
-        if(password1.length<5 || password1.length>20)
-        {
-            alert("Your password must be between 5-20 characters in length!\n"); 
-            return false; 
-        }
         if(password1!=password2)
         {
             alert("Passwords must match!\n");
@@ -163,11 +166,3 @@ $(document).ready(function(){
 </body>
 </html>
 
-<?php
-  //如果帳號已經設定好了就自動導向會員管理中心
-  if (isset($_SESSION["id"]) && ($_SESSION["id"]!="")) {
-        //會員中心
-        header("Location: chatroom.php");
-  }
-  
-?>

@@ -5,10 +5,9 @@
   require_once("login_check.php");
   $redirectUrl="memberadmin.php";
 
-  $sql="UPDATEˋmemberˋSET";
-  $sql.="ˋnameˋ='".$_POST["name"]."',";
-  $sql.="WHEREˋidˋ=".$_POST["id"];
+  $sql = "UPDATE `member` SET `name` = '".$_POST["name"]."' WHERE `id` = ".$_SESSION["id"];
   mysql_query($sql);
-
+  echo $sql;
   header("Location: $redirectUrl");
 ?>
+

@@ -49,9 +49,7 @@
 				</form>
 			</td>
 			<td width="200">
-				<?php header("Location:memberadmin.php"); 
-
-                ?>
+				
 			</td>
 		</tr>
 	</table>

@@ -30,7 +30,7 @@
     			setcookie("password",$_POST["password"],time()-100);
     		}
     	}
-    header("Location: memberadmin.php");
+    header("Location: chatroom.php");
     }else{
     	header("Location: index.php?errMsg=1");
     }
