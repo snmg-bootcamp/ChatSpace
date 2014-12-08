@@ -10,20 +10,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Member Center</title>
+	<script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
 	<script language="javascript">
 	function checkForm()
 	{
-	  if(document.formal.name.value==""){
+	  if($("#name").val()==""){
           alert("Please insert your name!");
-          document.formal.name.focus();
           return false;
 	  }
       
       return confirm('Are you sure to send out?');
     }
     </script>
-</head>
-<body>
 	<table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
 		<tr valign="top">
 			<td width="600">
@@ -42,14 +42,16 @@
 					</div>
 					<hr size="1" />
 					<p align="center">
-						<input name="ID" type="hidden" value="<?php echo $row["ID"];?>">
+						<input name="id" type="hidden" value="<?php echo $row["id"];?>">
 						<input type="submit" name="update" value="modify data">
 						<input type="reset" name="reset" value="reset data">
 					</p>
 				</form>
 			</td>
 			<td width="200">
-				<?php require_once("menu.php"); ?>
+				<?php header("Location:memberadmin.php"); 
+
+                ?>
 			</td>
 		</tr>
 	</table>

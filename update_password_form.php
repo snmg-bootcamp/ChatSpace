@@ -4,9 +4,9 @@
   session_start();
   require_once("login_check.php");
 
-  $sql="SELECT*FROMˋmemberˋWHEREˋaccountˋ='".$_SESSION["account"]."'";
-  $record=mysql_query($sql);
-  $row=mysqli_fetch_assoc($record);
+  $sql="SELECT * FROM ˋ member ˋ WHERE ˋ id ˋ = '".$_SESSION["id"]."'";
+  $record = mysql_query($sql);
+  $row= mysqli_fetch_assoc($record);
 ?>
 <html>
 <head>
@@ -62,7 +62,7 @@
 				  </p>
 				  <hr size="1" />
 				  <p align="center">
-				<input name="ID" type="hidden" value="<?php echo $row["ID"];?>">
+				<input name="ID" type="hidden" value="<?php echo $row["id"];?>">
 				   <input type="submit" name="change" value="modify password">
 				   <input type="reset" name="reset" value="reset data">
 				   </p>  	

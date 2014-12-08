@@ -1,5 +1,6 @@
 <?php
   session_start();
-  unset($_SESSION["account"]);
+  unset($_SESSION["id"]);
+  echo 'logout';
   header("Location: index.php");
 ?>

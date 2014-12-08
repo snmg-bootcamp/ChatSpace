@@ -7,7 +7,7 @@
 
   $sql="UPDATEˋmemberˋSET";
   $sql.="ˋnameˋ='".$_POST["name"]."',";
-  $sql.="WHEREˋIDˋ=".$_POST["ID"];
+  $sql.="WHEREˋidˋ=".$_POST["id"];
   mysql_query($sql);
 
   header("Location: $redirectUrl");

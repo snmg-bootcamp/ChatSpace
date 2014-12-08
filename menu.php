@@ -2,7 +2,7 @@
   require_once("connectodata.php");
   session_start();
 
-  $query_Member = "SELECT*FROMˋmemberˋWHEREˋaccountˋ='".$_SESSION["account"]."'";
+  $query_Member = "SELECT * FROM ˋmemberˋ WHERE ˋidˋ = '".$_SESSION["id"]."'";
   $Member = mysql_query("$query_Member");
   $row_Member=mysqli_fetch_assoc($Member);
 ?>
