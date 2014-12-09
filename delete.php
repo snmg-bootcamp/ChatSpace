@@ -4,11 +4,8 @@
   session_start();
   require_once("login_check.php");
 
-  $query_delete = "DELETE FROM ˋmemberˋ ";
-  $query_delete .= "WHERE ˋaccountˋ ='".$_SESSION["account"]."'";
-  echo $query_delete;
-  mysql_query($query_delete);
-  unset($_SESSION["account"]);
+  $sql = "UPDATE `member` SET `status` = '0' WHERE `account`='".$_POST["account"]."'";
+  mysql_query($sql);
   
   header("Location: index.php");
 ?>

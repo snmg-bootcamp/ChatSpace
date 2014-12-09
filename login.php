@@ -13,15 +13,16 @@
   	$row_RecLogin = mysql_fetch_assoc($RecLogin);
   	$account = $row_RecLogin["account"];
   	$password = $row_RecLogin["password"];
+    $id = $row_RecLogin["id"];
 
   	//比對密碼,成功就進入成功頁面
     if ($_POST["password"]==$password) {
     	
     	//設定登入者名稱
-    	$_SESSION["account"]=$account;
+    	$_SESSION["id"]=$id;
 
     	//用cookie紀錄登入
-    	if (isset($_POST["rememberme"]) && $_POST["rememberme"]=="true")) {
+    	if (isset($_POST["rememberme"]) && $_POST["rememberme"]=="true") {
     		setcookie("account",$_POST["account"],time()+365*24*60*60);setcookie("password",$_POST["password"],time()+365*24*60*60);
     	}else{
     		if (isset($_COOKIE["account"])) {
@@ -29,15 +30,9 @@
     			setcookie("password",$_POST["password"],time()-100);
     		}
     	}
-    header("Location: memberadmin.php");
+    header("Location: chatroom.php");
     }else{
     	header("Location: index.php?errMsg=1");
     }
-  }
-
-  //如果帳號已經設定好了就自動導向會員管理中心
-  if (isset($_SESSION["account"]) && ($_SESSION["account"]!="")) {
-  	//會員中心
-  	header("Location: memberadmin.php");
   }
 ?>

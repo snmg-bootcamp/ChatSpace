@@ -1,8 +1,13 @@
 <?php
-  header("Connect-Type": text/html; charset=utf-8);
+  header("Content-Type: text/html; charset=utf-8");
+  require_once("connectodata.php");
   session_start();
 
   require_once("login_check.php");
+
+  $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
+  $Member = mysql_query($query_Member);
+  $row_Member=mysql_fetch_assoc($Member);
 ?>
 
 <html>
@@ -16,16 +21,18 @@
   			<td>
   				<p><font size="6" color="#FF0000">Member Center</font></p>
   				<hr size="1" />
-  				<p>Welcome</p>
-  				<ol>
-  					<li>Join us</li>
-  					<li>Modify data</li>
-  					<li>Modify password</li>	
-  					<li>Delete account</li>	
-  				</ol>
+  				<p>Your name:
+              <strong><?php echo $row_Member["name"];?></strong>
+          </p>
+          <p align="center">
+          <a href="memberadmin.php">Member Center</a><br>
+          <a href="update_form.php">Modify your data</a><br>
+          <a href="update_password_form.php">Modify your password</a><br>
+          <a href="delete.php">Delete your account</a><br>
+          <a href="logout.php">Leave</a><br>
+          </p>
   			</td>
   			<td width="200">
-  				<?php require_once("menu.php"); ?>
   			</td>
   		</tr>
   	</table>
