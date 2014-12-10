@@ -3,7 +3,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
 	<!--屬性3種,內容-->
 	<title>MemberAdmin System - Homepage</title>
-        <link rel="stylesheet" type="text/css" href="indexback.css">
+        <link rel="stylesheet" type="text/css" href="extra/css/indexback.css">
 </head>
 <body>
         <form name="form1" method="post" action="login.php">  <!--傳遞方式,目標頁面-->
