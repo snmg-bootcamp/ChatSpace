@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
 	<!--屬性3種,內容-->
 	<title>MemberAdmin System - Homepage</title>
-        <link rel="stylesheet" type="text/css" href="/extra/css/indexback.css">
+        <link rel="stylesheet" type="text/css" href="extra/css/indexback.css">
         <script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>

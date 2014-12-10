@@ -25,7 +25,6 @@
               <strong><?php echo $row_Member["name"];?></strong>
           </p>
           <p align="center">
-          <a href="memberadmin.php">Member Center</a><br>
           <a href="update_form.php">Modify your data</a><br>
           <a href="update_password_form.php">Modify your password</a><br>
           <a href="delete.php">Delete your account</a><br>
