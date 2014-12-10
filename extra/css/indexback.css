@@ -8,6 +8,11 @@ body{
 	text-shadow: 2px 2px;
 	font-size: 35px;
 	color: #FFFFFF;
+	font-family: title_font;
+}
+@font-face {
+	font-family: title_font;
+	src: url("../fonts/southrose.ttf");
 }
 
 #form{

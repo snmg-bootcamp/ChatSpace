@@ -12,7 +12,7 @@
 			<tr valign="middle"><td align="center">
                                 <div id='title_block'>
                                 <p>Hello Guys</p>
-                                <p>Welcome to ChatSpace</p>
+                                <p>Welcome to CHATSPACE</p>
                                 </div>
                 <label class="placeholder-label empty"><br>
                 	<span class="placeholder">account</span>
