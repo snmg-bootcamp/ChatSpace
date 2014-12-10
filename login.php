@@ -22,7 +22,7 @@
     	$_SESSION["id"]=$id;
 
     	//用cookie紀錄登入
-    	if (isset($_POST["rememberme"]) && $_POST["rememberme"]=="true") {
+    	if (isset($_POST["rememberme"]) && $_POST["rememberme"]==true) {
     		setcookie("account",$_POST["account"],time()+365*24*60*60);setcookie("password",$_POST["password"],time()+365*24*60*60);
     	}else{
     		if (isset($_COOKIE["account"])) {
