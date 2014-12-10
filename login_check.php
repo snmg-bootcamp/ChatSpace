@@ -1,7 +1,5 @@
 <?php
-  if(!isset($_SESSION["account"]) || ($_SESSION("account")=="")){
+  if(!isset($_SESSION["id"]) || ($_SESSION["id"]=="")){
   	header("Location: index.php");
-  }else{
-  	header("Location: chatroom.php");
   }
 ?>

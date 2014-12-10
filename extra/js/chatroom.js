@@ -1,6 +1,10 @@
 var msgPanel;
+var postAuthor;
+var postTime;
+var postContent;
 $(document).ready(function(){
 	getMessage(Date.now());
+	getPost(Date.now() - 86400000);
 	$("#submitBtn").click(function(){
 		sendMessage();
 	});
@@ -14,6 +18,12 @@ $(document).ready(function(){
 
 	$("#shareBtn").click(function(){
 		submitPost();
+	});
+	$("#postContainer").on("click",".postBox", function(){
+		postAuthor = $(this).find(".postAuthor").html();
+		postTime = $(this).find(".postTime").html();
+		postContent = $(this).find(".contentSpan").html();
+		postModal(postAuthor, postTime, postContent);
 	});
 });
 
@@ -140,7 +150,7 @@ function submitPost(){
 				var jsonObj = jQuery.parseJSON(data);
 				console.log(jsonObj);
 				if (jsonObj.dataQualified == true && jsonObj.queryStatus == true){
-					insertPost(jsonObj.id, jsonObj.author, jsonObj.content, jsonObj.anonymous, formatTime(jsonObj.timestamp));
+					showSuccessInfo();
 				};
 			},
 			error:function(){
@@ -162,5 +172,40 @@ function insertPost(id, author, content, anonymous, postTime){
 				<span class='likeSpan' postId='"+id+"'><a class='likeBtn' postId='"+id+"'>Like</a></span>\
 			</div>\
 		</div>";
-	$("#postBox").prepend(box);
+	$("#postContainer").prepend(box);
+}
+
+function getPost(timestamp){
+	$.ajax({
+		type: "POST",
+		url: "pollingPost.php",
+		data:{
+			"timestamp": timestamp
+		},
+		success:function(data){
+			var jsonObj = jQuery.parseJSON(data);
+			console.log(jsonObj);
+			console.log(jsonObj.length);
+			console.log(jsonObj[jsonObj.length-1].timestamp);
+			for ( var i = 0; i < jsonObj.length; i++){
+				insertPost(jsonObj[i].id, jsonObj[i].author, jsonObj[i].content, jsonObj[i].anonymous, formatTime(jsonObj[i].timestamp));
+			}
+			getPost( jsonObj[ jsonObj.length - 1 ].timestamp );
+		},
+		error:function(){
+			console.log("error");
+		}
+	},"json");
+}
+
+function showSuccessInfo(){
+	$("#successPosting").fadeIn();
+	setTimeout( function(){$("#successPosting").fadeOut();} , 2000);
+}
+
+function postModal(postAuthor, postTime , postContent){
+	$("#modalTitle").html(postAuthor);
+	$("#modalTime").html(postTime);
+	$("#modalContentSpan").html(postContent);
+	$("#postDialog").modal("toggle");
 }
