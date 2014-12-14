@@ -1,12 +1,12 @@
 <?php
-	require_once("connectMsg.php");
+	require_once("../include/connectodata.php");
 	$dataQualified = false;
 	if (isset($_POST["content"]) && isset($_POST["timestamp"]) && isset($_POST["author"]) && isset($_POST["isAnonymous"])){
 		$dataQualified = true;
 		$contentSecured = htmlspecialchars($_POST["content"]);
 		$authorSecured = htmlspecialchars($_POST["author"]);
 		$sql = "INSERT INTO posts (author,content,anonymous,timestamp) VALUES ('$authorSecured','$contentSecured','$_POST[isAnonymous]','$_POST[timestamp]')";
-		$queryStatus = mysql_query( $sql, $conHost);
+		$queryStatus = mysql_query( $sql);
 		if ($queryStatus) {
 			$id = mysql_insert_id();
 			$postReturn = array(	'dataQualified' => $dataQualified ,

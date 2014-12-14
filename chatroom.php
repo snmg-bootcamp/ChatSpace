@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<?php
-			require_once("connectMsg.php");
+			require_once("include/connectodata.php");
 		?>
 		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">

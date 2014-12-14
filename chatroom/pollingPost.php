@@ -1,5 +1,5 @@
 <?php
-	require_once("connectMsg.php");
+	require_once("../include/connectodata.php");
 	set_time_limit(0);
 	$last_call = $_POST["timestamp"];
 
