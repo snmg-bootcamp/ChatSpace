@@ -34,7 +34,7 @@ header{
 	text-align: center;
 	overflow: hidden;
 	color: #FFFFFF;
-	font-size: 25px;
+	font-size: 27px;
 	margin-bottom: 5%;
     transition:all 0.2s ease-in;
     background-color: black;
@@ -52,36 +52,31 @@ header{
 	background-size: cover;
 }
 
-
-
-
-
 .submit{
 	display: inline-block;
-border-radius: 3px;
-background-clip: padding-box;
-background-color: #fea05c;
-border: none;
-color: #fff;
-font-family: "Open Sans", sans-serif;
-padding: 10px 20px 10px 20px;
-cursor: pointer;
-	/*display: inline-block;
-    position: relative;
-    width: 120px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 2px;
-    font-size: 0.9em;
-    background-color: #fff;
-    color: #646464;
-    background-color: #4285f4;
-    color: #fff;*/
+	border-radius: 5px;
+	background-clip: padding-box;
+	background-color: #7986CB;
+	border: none;
+	color: #fff;
+	font-family: "Open Sans", sans-serif;
+	font-size: 20px;
+	padding: 5px 17px 6px 17px;
+	cursor: pointer;	
 }
 
 .submit:active {
       box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
       transition-delay: 0s;
+}
+
+.note{
+	font-size: 24px;
+}
+
+.link{
+	font-size: 24px;
+	color: #BCAAA4;
 }
 
 #sign_in_form{

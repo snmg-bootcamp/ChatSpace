@@ -30,20 +30,20 @@
                                 <p>Start Chatting</p>
                                 </div>
                 <label class="placeholder-label empty"><br>
-                	<span class="placeholder">account</span>
+                	<span class="placeholder">Account</span>
                         <input name="account" type="text" value="<?php echo isset($_COOKIE["account"]) ? $_COOKIE["account"] : "";?>">
                 </label>
                 <br>
                 <label class="placeholder-label empty"><br>
-                	<span class="placeholder">password</span>
+                	<span class="placeholder">Password</span>
                 	<input name="password" type="password" value="<?php echo isset($_COOKIE["account"]) ? $_COOKIE["account"] : "";?>">
                 </p>
                 <p><input name="rememberme" type="checkbox">remember my account and password</p>
                 <p align="center">
                         <input class="submit" type="submit" name="login" value="log in">
                         
-                </p>	
-                <p><a href="join_page.php">Join us!!</a></p>
+                </p><br>	
+                <p class="note">Haven't signed up?<a href="join_page.php" class="link">Click here!</a></p>
 			</td></tr>
 
 		</table></div>
