@@ -3,10 +3,10 @@
   require_once("connectodata.php");
   
   //account是否註冊過?
-  $sql = "SELECT `account` FROM ˋmemberˋ WHERE ˋaccountˋ='".$_POST["account"]."'";
+  $sql = "SELECT * FROM ˋmemberˋ WHERE ˋaccountˋ='".$_POST["account"]."'";
   $result = mysql_query($sql);
-  $num = mysql_num_rows($result);
-  if($num == 0){
+  
+  if($result == false){
     $sql="INSERT INTO ˋmemberˋ (ˋaccountˋ,ˋpasswordˋ,ˋnameˋ) VALUES (";
     $sql.="'".$_POST["account"]."',";
     $sql.="'".$_POST["password"]."',";
