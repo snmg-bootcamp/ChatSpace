@@ -3,6 +3,11 @@
   require_once("connectodata.php");  //連結資料庫
   session_start(); //啟動SESSION引用資料庫連線引入檔
 
+  $account = "SELECT `account` FROM `member` WHERE `status` = 0";
+  if($_POST["account"]==$account){
+    header("Location: index.php?errMsg=1");//這裡可以嗎?
+  }
+
   //execute 會員登入動作
   if(isset($_POST["account"]) && isset($_POST["password"])){
   	//find會員資料

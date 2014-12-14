@@ -161,7 +161,7 @@ function submitPost(){
 }
 
 function insertPost(id, author, content, anonymous, postTime){
-	author = (anonymous == 1) ? "偷偷說..." : author;
+	author = (anonymous == 1) ? "Somebody..." : author;
 	var box = "<div class='postBox' postId='"+id+"'>\
 			<div class='titleBar' postId='"+id+"'>\
 				<div class='postAuthor' postId='"+id+"'>"+author+"</div>\

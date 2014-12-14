@@ -22,9 +22,8 @@
 		
 		<table id='form' width="600" border="0" valign="middle" align="center">
 			<tr valign="middle"><td align="center">
-                                <div id='title_block'>
-                                <p>Hello Guys</p>
-                                <p>Welcome to ChatSpace</p>
+                                <div id='title_block'>                                
+                                <p>Start Chatting!</p>
                                 </div>
                 <label class="placeholder-label empty"><br>
                 	<span class="placeholder">account</span>
@@ -55,7 +54,9 @@ $(document).ready(function(){
              $.ajax({
                  type : 'POST',
                  url : "join.php",
-                 data : {"account":account,"password":password,"name":name},
+                 data : {"account":$("#account").val(),
+                          "password":$("#password1").val(),
+                          "name":$("#name").val()},
                  //dataType : jsonp,
                  success : function(data){
                      console.log(data);
