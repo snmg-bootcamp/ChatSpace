@@ -54,7 +54,9 @@ $(document).ready(function(){
              $.ajax({
                  type : 'POST',
                  url : "join.php",
-                 data : {"account":account,"password":password,"name":name},
+                 data : {"account":$("#account").val(),
+                          "password":$("#password1").val(),
+                          "name":$("#name").val()},
                  //dataType : jsonp,
                  success : function(data){
                      console.log(data);
