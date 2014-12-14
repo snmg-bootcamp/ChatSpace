@@ -16,15 +16,18 @@
 	<title>MemberAdmin System - Homepage</title>
         <link rel="stylesheet" type="text/css" href="extra/css/indexback.css">
         <script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
+
 </head>
 <body>
+        <header>
+                <h1>Hello Guys <br>Welcome to CHATSPACE</h1>
+        </header>
         <form name="form1" method="post" action="login.php">  <!--傳遞方式,目標頁面-->
-		
+		<div id='login_form'>
 		<table id='form' width="600" border="0" valign="middle" align="center">
 			<tr valign="middle"><td align="center">
-                                <div id='title_block'>
-                                <p>Hello Guys</p>
-                                <p>Welcome to CHATSPACE</p>
+                                <div id='title_block'>                                
+                                <p>Start Chatting</p>
                                 </div>
                 <label class="placeholder-label empty"><br>
                 	<span class="placeholder">account</span>
@@ -43,7 +46,7 @@
                 <p><a href="join_page.php">Join us!!</a></p>
 			</td></tr>
 
-		</table>
+		</table></div>
 
 	</form>
 
@@ -131,37 +134,38 @@ $(document).ready(function(){
   
   </script>
 
-    <table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
-    <tr valign="top">
+    <div id='sign_in_form'>
+    <table id='form' width="800" border="0" align="center" cellpadding="4" cellspacing="0">
+    <tr valign="middle">
      <td width="600">
-       <p><font size="6" color="#FF0000">Join us!</font></p> 
-       <div>
-        <hr size="1" />
-        <p><strong>Enter your name</strong>:
+      <div id="title_block">
+       <p>Join Us</p> </div>
+       <div>        
+        <p>Enter your <strong>name</strong>:
           <input type="text" name="name" id="name">
           <font color="#FF0000">*</font>
         </p>
-        <p><strong>Enter your account</strong>:
+        <p>Enter your <strong>account</strong>:
           <input type="text" name="account" id="account">
           <font color="#FF0000">*</font>
         </p>
-        <p><strong>Enter your password</strong>:
+        <p>Enter your <strong>password</strong>:
           <input type="password" name="password1" id="password1">
           <font color="#FF0000">*</font>
         </p>
-        <p><strong>Re-enter your password</strong>:
+        <p><strong>Re-enter</strong> your password:
           <input type="password" name="password2" id="password2">
           <font color="#FF0000">*</font>
         </p>
-       </div>
-       <hr size="1" />
+       </div> 
+       <br>      
        <p align="center">
         <BUTTON id="join" >Join us!</BUTTON>
         <input type="reset" name="reset" value="Reset data!">
        </p>
      </td>
     </tr>  
-  </table>
+  </table></div>
     
 </body>
 </html>

@@ -4,37 +4,69 @@ body{
 }
 
 
-#title_block{
-	text-shadow: 2px 2px;
-	font-size: 35px;
-	color: #FFFFFF;
-	font-family: title_font;
-}
+/*the header*/
 @font-face {
 	font-family: title_font;
 	src: url("../fonts/southrose.ttf");
 }
 
+header{
+	box-sizing: inherit;
+	font-size: 40px;
+	text-align: center;
+	font-family: title_font;
+}
+
+#title_block{
+	font-family: title_font;
+	font-size: 50px;
+	text-shadow: 2px 2px;
+	color: #FFFFFF;	
+}
 #form{
 	width:500px;
 	height: 600px; 
 	box-shadow:1px 1px 20px #333333;
-	text-shadow: 2px 2px;
+	/*text-shadow: 2px 2px;*/
 	padding-bottom: 20px;
 	border-radius: 2px;
 	margin-top: 10%;
 	text-align: center;
 	overflow: hidden;
 	color: #FFFFFF;
-	font-size: 20px;
+	font-size: 25px;
 	margin-bottom: 5%;
     transition:all 0.2s ease-in;
     background-color: black;
     background: rgba(0,0,0,0.7);
 }
 
+/*login block*/
+#login_form{
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+	width: 430px;
+	margin-left: 350px;
+	background-image: url("extra/img/reebonz.jpg");
+	background-size: cover;
+}
+
+
+
+
+
 .submit{
 	display: inline-block;
+border-radius: 3px;
+background-clip: padding-box;
+background-color: #fea05c;
+border: none;
+color: #fff;
+font-family: "Open Sans", sans-serif;
+padding: 10px 20px 10px 20px;
+cursor: pointer;
+	/*display: inline-block;
     position: relative;
     width: 120px;
     height: 32px;
@@ -44,10 +76,18 @@ body{
     background-color: #fff;
     color: #646464;
     background-color: #4285f4;
-    color: #fff;
+    color: #fff;*/
 }
 
 .submit:active {
       box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
       transition-delay: 0s;
+}
+
+#sign_in_form{
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+	width: 430px;
+	margin-left: 250px;
 }
