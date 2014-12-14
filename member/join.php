@@ -1,6 +1,6 @@
 <?php
   header("Content-Type: text/<html; charset=utf-8");
-  require_once("connectodata.php");
+  require_once("../include/connectodata.php");
   
   //account是否註冊過?
   $sql = "SELECT * FROM ˋmemberˋ WHERE ˋaccountˋ='".$_POST["account"]."'";

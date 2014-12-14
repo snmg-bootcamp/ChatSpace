@@ -18,7 +18,7 @@
         <script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-        <form name="form1" method="post" action="login.php">  <!--傳遞方式,目標頁面-->
+        <form name="form1" method="post" action="member/login.php">  <!--傳遞方式,目標頁面-->
 		
 		<table id='form' width="600" border="0" valign="middle" align="center">
 			<tr valign="middle"><td align="center">
@@ -39,7 +39,6 @@
                         <input class="submit" type="submit" name="login" value="log in">
                         
                 </p>	
-                <p><a href="join_page.php">Join us!!</a></p>
 			</td></tr>
 
 		</table>

@@ -1,9 +1,9 @@
 <?php
   header("Content-Type: text/html; charset=utf-8");
-  require_once("connectodata.php");
+  require_once("include/connectodata.php");
   session_start();
 
-  require_once("login_check.php");
+  require_once("include/login_check.php");
 
   $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
   $Member = mysql_query($query_Member);
@@ -27,7 +27,8 @@
           <p align="center">
           <a href="update_form.php">Modify your data</a><br>
           <a href="update_password_form.php">Modify your password</a><br>
-          <a href="delete.php">Delete your account</a><br>
+          <a href="member/delete.php">Delete your account</a><br>
+          <a href="include/logout.php">Log out</a><br>
           </p>
   			</td>
   			<td width="200">

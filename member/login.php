@@ -1,11 +1,11 @@
 <?php
   header("Content-Type: text/html; charset=utf-8");
-  require_once("connectodata.php");  //連結資料庫
+  require_once("../include/connectodata.php");  //連結資料庫
   session_start(); //啟動SESSION引用資料庫連線引入檔
 
   $account = "SELECT `account` FROM `member` WHERE `status` = 0";
   if($_POST["account"]==$account){
-    header("Location: index.php?errMsg=1");//這裡可以嗎?
+    header("Location: ../index.php?errMsg=1");//這裡可以嗎?
   }
 
   //execute 會員登入動作
@@ -35,9 +35,9 @@
     			setcookie("password",$_POST["password"],time()-100);
     		}
     	}
-    header("Location: chatroom.php");
+    header("Location: ../memberadmin.php");
     }else{
-    	header("Location: index.php?errMsg=1");
+    	header("Location: ../index.php?errMsg=1");
     }
   }
 ?>
