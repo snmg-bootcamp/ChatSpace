@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>ChatSpace</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<link rel="shortcut icon" href="extra/img/favicon.ico" >
 		<script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="extra/js/bootstrap.min.js"></script>
