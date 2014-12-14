@@ -28,7 +28,6 @@
           <a href="update_form.php">Modify your data</a><br>
           <a href="update_password_form.php">Modify your password</a><br>
           <a href="delete.php">Delete your account</a><br>
-          <a href="logout.php">Leave</a><br>
           </p>
   			</td>
   			<td width="200">

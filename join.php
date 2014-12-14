@@ -7,10 +7,8 @@
   $result = mysql_query($sql);
   
   if($result == false){
-    $sql="INSERT INTO ˋmemberˋ (ˋaccountˋ,ˋpasswordˋ,ˋnameˋ) VALUES (";
-    $sql.="'".$_POST["account"]."',";
-    $sql.="'".$_POST["password"]."',";
-    $sql.="'".$_POST["name"]."',";
+    $sql="INSERT INTO member (account, password, name) 
+    VALUES ('$_POST[account]','$_POST[password]','$_POST[name]')";
     mysql_query($sql);
 
     $response = array("status"=>true);
