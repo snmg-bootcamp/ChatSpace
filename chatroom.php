@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>ChatSpace</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<link rel="shortcut icon" href="extra/img/favicon.ico" >
 		<script type="text/javascript" src="extra/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="extra/js/bootstrap.min.js"></script>
@@ -19,7 +20,7 @@
 	</head>
 	<body>
 		<?php
-			require_once("connectMsg.php");
+			require_once("include/connectodata.php");
 		?>
 		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">
@@ -30,13 +31,11 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Setting<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-            								<li><a href="#">Action</a></li>
-            								<li><a href="#">Another action</a></li>
-            								<li><a href="#">Something else here</a></li>
+            								<li><a href="memberadmin">Member Admin</a></li>
             								<li class="divider"></li>
-            								<li><a href="#">Separated link</a></li>
+            								<li><a href="include/logout.php">Log out</a></li>
           							</ul>
         						</li>
       					</ul>

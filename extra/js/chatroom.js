@@ -32,7 +32,7 @@ function sendMessage(){
 	if(message != ""){
 		$.ajax({
 			type: "POST",
-			url: "saveMsg.php",
+			url: "chatroom/saveMsg.php",
 			data:{
 				"content": message,
 				"timestamp": Date.now()
@@ -50,7 +50,7 @@ function sendMessage(){
 function getMessage(timestamp){
 	$.ajax({
 		type: "POST",
-		url: "polling.php",
+		url: "chatroom/polling.php",
 		data:{
 			"timestamp": timestamp
 		},
@@ -138,7 +138,7 @@ function submitPost(){
 	if(content != ""){
 		$.ajax({
 			type: "POST",
-			url: "savePost.php",
+			url: "chatroom/savePost.php",
 			data:{
 				"author": author,
 				"content": content,
@@ -161,7 +161,7 @@ function submitPost(){
 }
 
 function insertPost(id, author, content, anonymous, postTime){
-	author = (anonymous == 1) ? "偷偷說..." : author;
+	author = (anonymous == 1) ? "Somebody..." : author;
 	var box = "<div class='postBox' postId='"+id+"'>\
 			<div class='titleBar' postId='"+id+"'>\
 				<div class='postAuthor' postId='"+id+"'>"+author+"</div>\
@@ -178,7 +178,7 @@ function insertPost(id, author, content, anonymous, postTime){
 function getPost(timestamp){
 	$.ajax({
 		type: "POST",
-		url: "pollingPost.php",
+		url: "chatroom/pollingPost.php",
 		data:{
 			"timestamp": timestamp
 		},

@@ -3,7 +3,6 @@ body{
 	background-size: cover;
 }
 
-
 /*the header*/
 @font-face {
 	font-family: title_font;
@@ -86,3 +85,4 @@ header{
 	width: 430px;
 	margin-left: 250px;
 }
+

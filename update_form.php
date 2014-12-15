@@ -1,10 +1,12 @@
 <?php
   header("Content-Type: text/html; charset=utf-8");
-  require_once("connectodata.php");
+  require_once("include/connectodata.php");
   session_start();
-  require_once("login_check.php");
+  require_once("include/login_check.php");
 
-
+  $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
+  $Member = mysql_query($query_Member);
+  $row_Member=mysql_fetch_assoc($Member);
 ?>
 <html>
 <head>
@@ -27,22 +29,22 @@
 	<table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
 		<tr valign="top">
 			<td width="600">
-				<form action="member_update.php" method="POST" name="form1" onSubmit="return checkForm();">
+				<form action="member/member_update.php" method="POST" name="form1" onSubmit="return checkForm();">
 					<p><font size="6" color="#FF0000">Modify your data</font></p>
 					<div>
 						<hr size="1" />
 						<p><strong>Use account</strong>:
-							<input name="account" type="text" value="<?php echo $row["account"];?>" disabled="true">
+							<input name="account" type="text" value="<?php echo $row_Member["account"];?>" disabled="true">
 							<font color="#FF0000">*</font>
 						</p>
 						<p><strong>Name</strong>:
-							<input name="name" type="text" value="<?php echo $row["name"];?>">
+							<input name="name" type="text" value="">
 							<font color="#FF0000">*</font>
 						</p>
 					</div>
 					<hr size="1" />
 					<p align="center">
-						<input name="id" type="hidden" value="<?php echo $row["id"];?>">
+						<input name="id" type="hidden" value="">
 						<input type="submit" name="update" value="modify data">
 						<input type="reset" name="reset" value="reset data">
 					</p>

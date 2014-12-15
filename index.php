@@ -41,9 +41,9 @@
                 <p><input name="rememberme" type="checkbox">remember my account and password</p>
                 <p align="center">
                         <input class="submit" type="submit" name="login" value="log in">
-                        
                 </p><br>	
                 <p class="note">Haven't signed up?<a href="join_page.php" class="link">Click here!</a></p>
+
 			</td></tr>
 
 		</table></div>
@@ -58,7 +58,9 @@ $(document).ready(function(){
              $.ajax({
                  type : 'POST',
                  url : "join.php",
-                 data : {"account":account,"password":password,"name":name},
+                 data : {"account":$("#account").val(),
+                          "password":$("#password1").val(),
+                          "name":$("#name").val()},
                  //dataType : jsonp,
                  success : function(data){
                      console.log(data);

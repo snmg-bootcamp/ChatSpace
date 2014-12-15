@@ -1,4 +1,6 @@
 <?php
+  require_once("connectodata.php");
+  session_start();
   function logout(){
   	header("Location: logout.php");
   }
@@ -8,7 +10,7 @@
   }
 
   function getAccount(){
-  	session_start();
+  	
     $sql = "SELECT `account` FROM `member` WHERE `id`='".$_SESSION["id"]."'";
     $RecLogin = mysql_query($sql);
     $row_RecLogin = mysql_fetch_assoc($RecLogin);
@@ -16,7 +18,6 @@
   }
 
   function getName(){
-  	session_start();
     $sql = "SELECT `name` FROM `member` WHERE `id`='".$_SESSION["id"]."'";
     $RecLogin = mysql_query($sql);
     $row_RecLogin = mysql_fetch_assoc($RecLogin);
@@ -24,7 +25,6 @@
   }
 
   function getId(){
-    session_start();
     return $_SESSION["id"];
   }
 ?>

@@ -1,12 +1,9 @@
 <?php
   header("Content-Type: text/html; charset=utf-8");
-  require_once("connectodata.php");
+  require_once("include/connectodata.php");
   session_start();
-  require_once("login_check.php");
+  require_once("include/login_check.php");
 
-  $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
-  $Member = mysql_query($query_Member);
-  $row_Member=mysql_fetch_assoc($Member);
 ?>
 <html>
 <head>
@@ -50,7 +47,7 @@
 	<table width="800" border="0" align="center" cellpadding="4" cellspacing="0">
 		<tr valign="top">
 			<td width="600">
-				<form action="update_password.php" method="POST" name="form1" onSubmit="return checkForm();">
+				<form action="member/update_password.php" method="POST" name="form1" onSubmit="return checkForm();">
 					<p> <font size="6" color="#FF0000">Modify member's data</font></p>
 					<hr size="1" />
 				  <p><strong>Use password</strong> :
@@ -61,7 +58,7 @@
 				  </p>
 				  <hr size="1" />
 				  <p align="center">
-				<input name="ID" type="hidden" value="<?php echo $row["id"];?>">
+				<input name="ID" type="hidden" value="">
 				   <input type="submit" name="change" value="modify password">
 				   <input type="reset" name="reset" value="reset data">
 				   </p>  	
