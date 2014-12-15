@@ -71,8 +71,6 @@ span.timeSpan{
 	margin-right: 20px;
 }
 .msgBody{
-	border-bottom: solid 1px #C4C4C4;
-	margin-bottom: 10px;
 	display: none;
 }
 .msgText{
@@ -179,4 +177,22 @@ span.timeSpan{
 }
 .modal-header{
 	background-color: #FFFFFF;
+}
+.bubbleLeft{
+	float:left;
+	width: 70%;
+}
+.bubbleRight{
+	float:right;
+	width: 70%;
+}
+.messageAuthorLeft{
+	float: left;
+	font-weight: 800;
+	padding-top: 34px;
+}
+.messageAuthorRight{
+	float: right;
+	font-weight: 800;
+	padding-top: 34px;
 }
