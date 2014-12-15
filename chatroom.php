@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="extra/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/ripples.min.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/material-wfont.min.css">
+		<link rel="stylesheet" type="text/css" href="extra/css/speechBubble.css">
 		<script>
             $(document).ready(function() {
                 $.material.init();
@@ -22,6 +23,7 @@
 		<?php
 			require_once("include/connectodata.php");
 			include "include/function.php";
+			echo "<div id='userInfo' userid='".getId()."' username='".getName()."'></div>";
 		?>
 		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">
