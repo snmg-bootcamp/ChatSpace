@@ -21,6 +21,7 @@
 	<body>
 		<?php
 			require_once("include/connectodata.php");
+			include "include/function.php";
 		?>
 		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">
@@ -29,7 +30,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
+						<li><a href="#"> <?php echo getName(); ?> </a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Setting<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
