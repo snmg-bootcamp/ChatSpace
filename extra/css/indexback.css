@@ -86,3 +86,15 @@ header{
 	margin-left: 250px;
 }
 
+#join{
+	display: inline-block;
+border-radius: 5px;
+background-clip: padding-box;
+background-color: #7986CB;
+border: none;
+color: #fff;
+font-family: "Open Sans", sans-serif;
+font-size: 20px;
+padding: 5px 17px 6px 17px;
+cursor: pointer;
+}
