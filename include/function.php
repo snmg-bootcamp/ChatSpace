@@ -1,6 +1,6 @@
 <?php
   require_once("connectodata.php");
-  //session_start();
+  session_start();
   function logout(){
   	header("Location: logout.php");
   }

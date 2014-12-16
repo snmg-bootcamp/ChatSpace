@@ -8,7 +8,7 @@ $(document).ready(function(){
 	userName = userInfoObj.getAttribute("username");
 	userId = userInfoObj.getAttribute("userid");
 
-	getMessage(Date.now());
+	getMessage(Date.now() - 86400000);
 	getPost(Date.now() - 86400000);
 	$("#submitBtn").click(function(){
 		sendMessage();
