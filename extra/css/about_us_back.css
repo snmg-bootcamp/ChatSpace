@@ -19,41 +19,25 @@ body{
 }
 
 /*setting the blocks*/
-#footer{
+#introduction{
 	background-color: #E1BEE7;
 	height: 650px;
-	width: 960px;
+	width: 1110px;
 	margin: 10px;
-	padding: 9px 9px 9px 9px;
+	padding: 9px;
 	position: absolute;
-	left: 23%;
+	left: 19%;
+}
+.blocks{
+	float: left;
+	background-color: #FFFFFF;
+	height: 613px;
+	width: 328px;
+	margin: 10px;
+	padding: 11px;
+	position: relative;
 }
 
-/*first block*/
-.wu{
-	float: left;
-	background-color: #FFFFFF;
-	height: 266px;
-	width: 290px;
+#footer{
 	margin: 10px;
-	padding: 9px 9px 9px 9px;
-	position: relative;
-}
-.chen{
-	float: left;
-	background-color: #FFFFFF;
-	height: 266px;
-	width: 290px;
-	margin: 10px;
-	padding: 9px 9px 9px 9px;
-	position: relative;
-}
-.a_chen{
-	float: left;
-	background-color: #FFFFFF;
-	height: 266px;
-	width: 290px;
-	margin: 10px;
-	padding: 9px 9px 9px 9px;
-	position: relative;
 }
