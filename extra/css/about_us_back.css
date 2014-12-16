@@ -1,0 +1,43 @@
+body{
+	background-image: url("../img/06993_HD.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left top;
+	display: block;
+	margin: 8px;
+}
+
+/*top block design*/
+@font-face {
+	font-family: title_font;
+	src: url("../fonts/southrose.ttf");
+}
+#header{
+	font-family: title_font;
+	font-size: 40px;
+	text-align: center;
+}
+
+/*setting the blocks*/
+#introduction{
+	background-color: #E1BEE7;
+	height: 650px;
+	width: 1110px;
+	margin: 10px;
+	margin-left: 362px;
+	padding: 9px;
+	left: 19%;
+}
+.blocks{
+	float: left;
+	background-color: #FFFFFF;
+	height: 613px;
+	width: 328px;
+	margin: 10px;
+	padding: 11px;
+	position: relative;
+}
+
+#footer{
+	margin: 150px;
+}
