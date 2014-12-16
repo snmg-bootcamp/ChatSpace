@@ -57,7 +57,7 @@ $(document).ready(function(){
          if(checkForm() && check_password()){  
              $.ajax({
                  type : 'POST',
-                 url : "join.php",
+                 url : "member/join.php",
                  data : {"account":$("#account").val(),
                           "password":$("#password1").val(),
                           "name":$("#name").val()},
@@ -67,6 +67,10 @@ $(document).ready(function(){
                      if(data.status ==false){
                         alert("Someone have used this account!");
                      }
+                     document.getElementById("name").value = "";
+                     document.getElementById("account").value = "";
+                     document.getElementById("password1").value = "";
+                     document.getElementById("password2").value = "";
                  },
                  error:  function(){alert("error");}
              },"json");
@@ -163,7 +167,6 @@ $(document).ready(function(){
        <br>      
        <p align="center">
         <BUTTON id="join" >Join us!</BUTTON>
-        <input type="reset" name="reset" value="Reset data!">
        </p>
      </td>
     </tr>  

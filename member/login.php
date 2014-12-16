@@ -3,11 +3,6 @@
   require_once("../include/connectodata.php");  //連結資料庫
   session_start(); //啟動SESSION引用資料庫連線引入檔
 
-  $account = "SELECT `account` FROM `member` WHERE `status` = 0";
-  if($_POST["account"]==$account){
-    header("Location: ../index.php?errMsg=1");//這裡可以嗎?
-  }
-
   //execute 會員登入動作
   if(isset($_POST["account"]) && isset($_POST["password"])){
   	//find會員資料
@@ -19,11 +14,11 @@
   	$account = $row_RecLogin["account"];
   	$password = $row_RecLogin["password"];
     $id = $row_RecLogin["id"];
+    $status = $row_RecLogin["status"];
 
   	//比對密碼,成功就進入成功頁面
-    if ($_POST["password"]==$password) {
+    if ($_POST["password"]==$password && $status==1) {
     	
-    	//設定登入者名稱
     	$_SESSION["id"]=$id;
 
     	//用cookie紀錄登入
@@ -35,7 +30,7 @@
     			setcookie("password",$_POST["password"],time()-100);
     		}
     	}
-    header("Location: ../memberadmin.php");
+    header("Location: ../chatroom.php");
     }else{
     	header("Location: ../index.php?errMsg=1");
     }

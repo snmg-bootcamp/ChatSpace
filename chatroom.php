@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="extra/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/ripples.min.css">
 		<link rel="stylesheet" type="text/css" href="extra/css/material-wfont.min.css">
+		<link rel="stylesheet" type="text/css" href="extra/css/speechBubble.css">
 		<script>
             $(document).ready(function() {
                 $.material.init();
@@ -21,6 +22,8 @@
 	<body>
 		<?php
 			require_once("include/connectodata.php");
+			include "include/function.php";
+			echo "<div id='userInfo' userid='".getId()."' username='".getName()."'></div>";
 		?>
 		<nav class="navbar navbar-default" role="navigation" id="navbar" >
 			<div class="container-fluid">
@@ -29,11 +32,11 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
+						<li><a href="#"> <?php echo getName(); ?> </a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Setting<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-            								<li><a href="memberadmin">Member Admin</a></li>
+            								<li><a href="memberadmin.php">Member Admin</a></li>
             								<li class="divider"></li>
             								<li><a href="include/logout.php">Log out</a></li>
           							</ul>

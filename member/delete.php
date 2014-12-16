@@ -4,8 +4,9 @@
   session_start();
   require_once("../include/login_check.php");
 
-  $sql = "UPDATE `member` SET `status` = '0' WHERE `account`='".$_POST["account"]."'";
+  $sql = "UPDATE `member` SET `status` = '0' WHERE `id` = '".$_SESSION["id"]."'";
   mysql_query($sql);
+  unset($_SESSION["id"]);
   
   header("Location: ../index.php");
 ?>

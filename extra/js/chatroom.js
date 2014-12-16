@@ -1,9 +1,14 @@
 var msgPanel;
-var postAuthor;
-var postTime;
-var postContent;
+var userId;
+var userName;
+var userInfoObj;
+
 $(document).ready(function(){
-	getMessage(Date.now());
+	userInfoObj = document.getElementById("userInfo");
+	userName = userInfoObj.getAttribute("username");
+	userId = userInfoObj.getAttribute("userid");
+
+	getMessage(Date.now() - 86400000);
 	getPost(Date.now() - 86400000);
 	$("#submitBtn").click(function(){
 		sendMessage();
@@ -20,9 +25,9 @@ $(document).ready(function(){
 		submitPost();
 	});
 	$("#postContainer").on("click",".postBox", function(){
-		postAuthor = $(this).find(".postAuthor").html();
-		postTime = $(this).find(".postTime").html();
-		postContent = $(this).find(".contentSpan").html();
+		var postAuthor = $(this).find(".postAuthor").html();
+		var postTime = $(this).find(".postTime").html();
+		var postContent = $(this).find(".contentSpan").html();
 		postModal(postAuthor, postTime, postContent);
 	});
 });
@@ -34,6 +39,7 @@ function sendMessage(){
 			type: "POST",
 			url: "chatroom/saveMsg.php",
 			data:{
+				"author": userName,
 				"content": message,
 				"timestamp": Date.now()
 			},
@@ -59,7 +65,7 @@ function getMessage(timestamp){
 			console.log(jsonObj);
 			getMessage(jsonObj[ Object.keys(jsonObj).length - 1].time);
 			for (var i = 0; i < Object.keys(jsonObj).length; i++){
-				insertMessage(jsonObj[i].id, jsonObj[i].content, jsonObj[i].time);
+				insertMessage(jsonObj[i].id, jsonObj[i].author, jsonObj[i].content, jsonObj[i].time);
 			};
 			msgDiv.scrollTop = msgDiv.scrollHeight;
 		},
@@ -69,7 +75,7 @@ function getMessage(timestamp){
 	},"json");
 }
 
-function insertMessage(id, content, timestamp){
+function insertMessage(id, author, content, timestamp){
 	if(urlCheck(content)){
 		if (youtubeUrlCheck(content)) {
 			content = makeYoutubePlayer(content);
@@ -77,14 +83,29 @@ function insertMessage(id, content, timestamp){
 			content = makeHyperLink(content);
 		}
 	}
-	var box='<div class="msgBody" id="'+ id +'">\
-				<div class="msgText">'+content+'</div>\
-				<div class="msgTime"><span class="timeSpan">'+formatTime(timestamp)+'</span></div>\
+	if(author == userName){
+		var box='<div class="msgBody" id="'+ id +'">\
+				<div class="messageAuthorRight">'+author+'</div>\
+				<div class="triangle-border right bubbleRight">\
+					<div class="msgText">'+content+'</div>\
+					<div class="msgTime"><span class="timeSpan">'+formatTime(timestamp)+'</span></div>\
+					<div class="cleaner"></div>\
+				</div>\
 				<div class="cleaner"></div>\
 			</div>';
+	}else{
+		var box='<div class="msgBody" id="'+ id +'">\
+				<div class="messageAuthorLeft">'+author+'</div>\
+				<div class="triangle-border left bubbleLeft">\
+					<div class="msgText">'+content+'</div>\
+					<div class="msgTime"><span class="timeSpan">'+formatTime(timestamp)+'</span></div>\
+					<div class="cleaner"></div>\
+				</div>\
+				<div class="cleaner"></div>\
+			</div>';
+	}
 
 	$("#msgPanelFooter").before(box);
-	//var target = document.getElementById(id);
 	$("#"+id).fadeIn();
 }
 
@@ -127,12 +148,12 @@ function makeYoutubePlayer(content){
 	hyperLinkContent = makeHyperLink(content);
 	content = content.replace("watch?v=", "embed/");
 	playerSrc = content.match(/https:\/\/www\.youtube\.com\/embed[\S]+/);
-	content = hyperLinkContent + "\n" + "<iframe width='560' height='315' src='"+playerSrc+"' frameborder='0' allowfullscreen></iframe>";
+	content = hyperLinkContent + "\n" + "<iframe width='300' height='200' src='"+playerSrc+"' frameborder='0' allowfullscreen></iframe>";
 	return content;
 }
 
 function submitPost(){
-	var author = "authorName";
+	var author = userName;
 	var content = $("#textArea").val();
 	var isAnonymous = ( document.getElementById("isAnonymous").checked) ? 1 : 0;
 	if(content != ""){

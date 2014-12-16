@@ -8,6 +8,9 @@
   $query_Member = "SELECT * FROM `member` WHERE `id` = ".$_SESSION["id"];
   $Member = mysql_query($query_Member);
   $row_Member=mysql_fetch_assoc($Member);
+
+  include("include/function.php");
+  echo getStatus();
 ?>
 
 <html>
@@ -29,6 +32,7 @@
           <a href="update_password_form.php">Modify your password</a><br>
           <a href="member/delete.php">Delete your account</a><br>
           <a href="include/logout.php">Log out</a><br>
+          <a href="about_us.html">We are family</a>
           </p>
   			</td>
   			<td width="200">
